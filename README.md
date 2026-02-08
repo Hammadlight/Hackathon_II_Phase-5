@@ -3,7 +3,7 @@
 🔎 Judge Quick View
 
 Live Frontend (Azure AKS Deployment):
-👉 http://20.204.202.125/
+👉 https://bit.ly/3Mj8MKz
 
 Backend: FastAPI on Azure Kubernetes Service (AKS)
 Database: Neon PostgreSQL (SSL enabled)
@@ -40,7 +40,7 @@ Deployed on Azure AKS
 
 Public LoadBalancer exposed
 
-URL: http://20.204.202.125/
+URL: https://bit.ly/3Mj8MKz
 
 Backend
 
@@ -224,7 +224,7 @@ hackathon-ii-phase5-cloud/
 ▶ How to Use
 
 Open the frontend
-👉 http://20.204.202.125/
+👉 https://bit.ly/3Mj8MKz
 
 Sign in
 
