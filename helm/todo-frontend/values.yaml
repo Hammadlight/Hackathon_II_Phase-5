@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: mehreenasghar/todo-frontend
+  tag: phase5
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3000
+
+env:
+  NEXT_PUBLIC_API_BASE_URL: "http://20.204.190.247:8000"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}

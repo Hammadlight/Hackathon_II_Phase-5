@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+  namespace: default
+spec:
+  type: pubsub.kafka
+  version: v1
+  metadata:
+    - name: brokers
+      value: "redpanda-0.redpanda.kafka.svc.cluster.local:9093"
+    - name: consumerGroup
+      value: "todo-chatbot"
+    - name: clientID
+      value: "todo-chatbot"
+    - name: authType
+      value: "none"

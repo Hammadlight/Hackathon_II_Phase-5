@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-receiver
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: event-receiver
+  template:
+    metadata:
+      labels:
+        app: event-receiver
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "receiver"
+        dapr.io/app-port: "8000"
+        dapr.io/app-protocol: "http"
+    spec:
+      containers:
+        - name: app
+          image: todo-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+          env:
+            - name: ENV
+              value: phase5-test

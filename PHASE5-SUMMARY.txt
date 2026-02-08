@@ -1,0 +1,14 @@
+Hackathon II — Phase 5 Summary
+
+Phase 1–4: Fully completed and verified.
+Phase 5: Cloud-ready Kubernetes deployment.
+
+Status:
+- Helm charts validated (helm lint PASS)
+- Architecture compatible with managed Kubernetes
+- No cloud membership available
+
+Advanced components (Kafka, Dapr, managed cloud K8s)
+are optional per Hackathon PDF and not implemented.
+
+Project is submission-ready.

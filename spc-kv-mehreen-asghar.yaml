@@ -1,0 +1,19 @@
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: kv-hammadnoor-khan
+  namespace: todo
+spec:
+  provider: azure
+  parameters:
+    usePodIdentity: "false"
+    useVMManagedIdentity: "true"
+    userAssignedIdentityID: ""
+    keyvaultName: kv-hammadnoor-khan
+    cloudName: ""
+    objects: |
+      array:
+        - |
+          objectName: OPENAI-API-KEY
+          objectType: secret
+    tenantId: a6857339-39cf-4a28-9764-ef503338c622

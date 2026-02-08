@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dapr-subscriber
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dapr-subscriber
+  template:
+    metadata:
+      labels:
+        app: dapr-subscriber
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "subscriber"
+        dapr.io/app-port: "8000"
+    spec:
+      containers:
+        - name: app
+          image: todo-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: ENV
+              value: "phase5-test"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dapr-subscriber
+  namespace: default
+spec:
+  selector:
+    app: dapr-subscriber
+  ports:
+    - port: 8000
+      targetPort: 8000
